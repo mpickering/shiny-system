@@ -1,0 +1,5 @@
+#! /usr/bin/env nix-shell
+#! nix-shell -i bash -p "haskellPackages.ghcWithPackages (ps: [ps.lens])" -p haskellPackages.cabal-install
+
+cabal new-build --enable-executable-dynamic
+time cabal new-run --enable-executable-dynamic

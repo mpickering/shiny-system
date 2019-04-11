@@ -1,0 +1,3 @@
+Test case for GHC #15524
+
+Run `./good` for the good case and `./bad` for the bad case
