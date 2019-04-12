@@ -38,7 +38,7 @@ opts = words "-v2 -fno-code -package-db /home/matt/jsaddle-dom/dist-newstyle/bui
 
 test :: G.Ghc ()
 test = do
-  initSession ["-v2", "-package-db", "localdb2", "-package", "aeson", "-fno-code"]
+  initSession ["-v2", "-package", "big-package", "-fno-code"]
   t <- G.guessTarget "Target.hs" Nothing
   G.setTargets [t]
   G.liftIO $ print "Before load"

@@ -1,3 +1,5 @@
 Test case for GHC #15524
 
-Run `./good` for the good case and `./bad` for the bad case
+Run `./good-no-nix-no-hackage` for the good case and `./bad-no-nix-no-hackage` for the bad case
+
+The only dependency is having `ghc` and `cabal` on your path.

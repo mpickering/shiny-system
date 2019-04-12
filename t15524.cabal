@@ -22,5 +22,5 @@ executable t15524
   -- other-extensions:
   build-depends:       base >=4.11 && <4.13, ghc, process
   -- hs-source-dirs:
-  ghc-options: -keep-tmp-files
+  ghc-options:
   default-language:    Haskell2010
