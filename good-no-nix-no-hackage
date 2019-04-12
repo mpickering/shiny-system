@@ -3,4 +3,4 @@ cabal sandbox init --sandbox=good-case-sandbox
 cabal install big-package/ --enable-split-sections
 cabal new-build
 CMD=$(cabal new-exec -- which t15524)
-cabal exec -- time $CMD
+time cabal exec -- $CMD
