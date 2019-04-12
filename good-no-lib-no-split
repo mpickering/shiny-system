@@ -1,0 +1,6 @@
+cabal sandbox delete --sandbox=good-no-split-no-lib-case-sandbox
+cabal sandbox init --sandbox=good-no-split-no-lib-case-sandbox
+cabal install big-package/
+cabal new-build
+CMD=$(cabal new-exec -- which t15524)
+time cabal exec -- $CMD

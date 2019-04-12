@@ -1,0 +1,6 @@
+cabal sandbox delete --sandbox=good-dynamic-case-sandbox
+cabal sandbox init --sandbox=good-dynamic-case-sandbox
+cabal install big-package/ --enable-library-for-ghci --enable-split-sections
+cabal new-build --enable-executable-dynamic
+CMD=$(cabal new-exec --enable-executable-dynamic -- which t15524)
+time cabal exec -- $CMD

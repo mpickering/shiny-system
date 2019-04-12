@@ -1,5 +1,47 @@
 Test case for GHC #15524
 
-Run `./good-no-nix-no-hackage` for the good case and `./bad-no-nix-no-hackage` for the bad case
+```
+> ./bad-all
+...
 
-The only dependency is having `ghc` and `cabal` on your path.
+real	2m24.222s
+user	2m23.960s
+sys	0m0.205s
+> ./good-no-lib
+...
+real	0m11.752s
+user	0m11.536s
+sys	0m0.138s
+
+> ./good-dynamic
+...
+real	0m0.342s
+user	0m0.194s
+sys	0m0.102s
+
+> ./good-no-split
+...
+
+real	0m0.432s
+user	0m0.292s
+sys	0m0.093s
+
+> ./good-no-lib-no-split
+...
+real	0m0.432s
+user	0m0.277s
+sys	0m0.112s
+
+```
+
+As far as I can tell the problem is a combination of three things.
+
+1. Static linking the executable
+2. The cabal flag `--enable-library-for-ghci`
+3. Enabling `--split-sections`
+
+* `bad-all` is with (1) (2) and (3)
+* `good-no-lib` is (1) and (3)
+* `good-no-split` is (1) and (2)
+* `good-no-lib-no-split` is just (1)
+* `good-dynamic` is (2) and (3)

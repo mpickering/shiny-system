@@ -1,0 +1,6 @@
+cabal sandbox delete --sandbox=good-no-split-case-sandbox
+cabal sandbox init --sandbox=good-no-split-case-sandbox
+cabal install big-package/ --enable-library-for-ghci
+cabal new-build
+CMD=$(cabal new-exec -- which t15524)
+time cabal exec -- $CMD
