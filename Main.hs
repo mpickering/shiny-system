@@ -12,6 +12,7 @@ main = do
   putStrLn "done"
 
 
+
 withGHC' :: G.Ghc a -> IO a
 withGHC' body = do
     mlibdir <- getSystemLibDir
@@ -37,7 +38,7 @@ opts = words "-v2 -fno-code -package-db /home/matt/jsaddle-dom/dist-newstyle/bui
 
 test :: G.Ghc ()
 test = do
-  initSession ["-v2","-package", "lens", "-fno-code"]
+  initSession ["-v2", "-package-db", "localdb2", "-package", "aeson", "-fno-code"]
   t <- G.guessTarget "Target.hs" Nothing
   G.setTargets [t]
   G.liftIO $ print "Before load"

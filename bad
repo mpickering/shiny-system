@@ -1,5 +1,5 @@
 #! /usr/bin/env nix-shell
-#! nix-shell -i bash -p "haskellPackages.ghcWithPackages (ps: [ps.lens])" -p haskellPackages.cabal-install
+#! nix-shell -i bash -p "haskell.packages.ghc864.ghcWithPackages (ps: [ps.lens])" -p haskellPackages.cabal-install
 
-cabal new-build
-time cabal new-run
+cabal new-build -v3
+time $(cabal new-exec -- which t15524)

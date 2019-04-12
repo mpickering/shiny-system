@@ -20,7 +20,7 @@ executable t15524
   main-is:             Main.hs
   -- other-modules:
   -- other-extensions:
-  build-depends:       base >=4.11 && <4.13, ghc, process, aeson
+  build-depends:       base >=4.11 && <4.13, ghc, process
   -- hs-source-dirs:
-  ghc-options:
+  ghc-options: -keep-tmp-files
   default-language:    Haskell2010

@@ -1,0 +1,5 @@
+rm -r localdb2/*
+ghc-pkg init localdb2
+cabal install aeson --package-db=localdb2 --enable-library-for-ghci --enable-split-sections
+cabal new-build
+time $(cabal new-exec -- which t15524)
